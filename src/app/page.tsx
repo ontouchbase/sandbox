@@ -122,12 +122,14 @@ export default function Component() {
           {/* This is the content of the card */}
           <CardContent className="space-y-2">
             {/* This is the button for the default button showcase */}
-            <Button>Default Button</Button>
-            <Button variant="secondary">Secondary Button</Button>
-            <Button variant="destructive">Destructive Button</Button>
-            <Button variant="outline">Outline Button</Button>
-            <Button variant="ghost">Ghost Button</Button>
-            <Button variant="link">Link Button</Button>
+            <div className="flex flex-row flex-wrap gap-2">
+              <Button>Default Button</Button>
+              <Button variant="secondary">Secondary Button</Button>
+              <Button variant="destructive">Destructive Button</Button>
+              <Button variant="outline">Outline Button</Button>
+              <Button variant="ghost">Ghost Button</Button>
+              <Button variant="link">Link Button</Button>
+            </div>
           </CardContent>
         </Card>
 
