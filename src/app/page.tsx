@@ -31,6 +31,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+// This is the light theme object that contains the theme variables for the light theme
 const lightTheme = {
   "--background": "0 0% 100%",
   "--foreground": "240 10% 3.9%",
@@ -54,6 +55,7 @@ const lightTheme = {
   "--radius": "0.5rem",
 };
 
+// This is the dark theme object that contains the theme variables for the dark theme
 const darkTheme = {
   "--background": "240 10% 3.9%",
   "--foreground": "0 0% 98%",
@@ -77,9 +79,15 @@ const darkTheme = {
   "--radius": "0.5rem",
 };
 
+// This is the main component that renders the showcase of components
 export default function Component() {
+  // This sets the theme state to light
   const [theme, setTheme] = useState("light");
 
+  // This effect updates the theme variables in the document based on the current
+  // theme state.
+  // useEffect is a hook that runs when the component is mounted and when the
+  // theme state changes.
   useEffect(() => {
     const root = document.documentElement;
     const themeVars = theme === "light" ? lightTheme : darkTheme;
@@ -89,22 +97,31 @@ export default function Component() {
   }, [theme]);
 
   return (
+    // This is the main container for the component showcase
     <div className="container mx-auto p-4">
+      {/* This is the title of the component showcase */}
       <h1 className="text-3xl font-bold mb-4 text-primary">
         shadcn Component Showcase
       </h1>
+      {/* This is the button to toggle the theme */}
       <div className="mb-4">
         <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           Toggle Theme
         </Button>
       </div>
+      {/* This is the grid that contains the components */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {/* This is the card for the button showcase */}
         <Card>
+          {/* This is the header of the card */}
           <CardHeader>
+            {/* This is the title of the card */}
             <CardTitle>Button Showcase</CardTitle>
             <CardDescription>Various button styles</CardDescription>
           </CardHeader>
+          {/* This is the content of the card */}
           <CardContent className="space-y-2">
+            {/* This is the button for the default button showcase */}
             <Button>Default Button</Button>
             <Button variant="secondary">Secondary Button</Button>
             <Button variant="destructive">Destructive Button</Button>
@@ -114,6 +131,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the input and label showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Input and Label</CardTitle>
@@ -125,6 +143,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the tabs showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Tabs</CardTitle>
@@ -142,6 +161,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the checkbox showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Checkbox</CardTitle>
@@ -155,6 +175,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the radio group showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Radio Group</CardTitle>
@@ -174,6 +195,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the select showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Select</CardTitle>
@@ -193,6 +215,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the slider showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Slider</CardTitle>
@@ -203,6 +226,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the switch showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Switch</CardTitle>
@@ -216,6 +240,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the toggle showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Toggle</CardTitle>
@@ -226,6 +251,7 @@ export default function Component() {
           </CardContent>
         </Card>
 
+        {/* This is the card for the tooltip showcase */}
         <Card>
           <CardHeader>
             <CardTitle>Tooltip</CardTitle>
